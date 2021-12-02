@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    //Status Loggeado
+    @AppStorage("log_Status") var log_Status: Bool = false
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        Group{
+            if log_Status{
+                MainPage()
+            }else{
+                OnboardingPage()
+            }
+        }
     }
 }
 
